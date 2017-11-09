@@ -1,10 +1,10 @@
 {
-  "enforceSecurity" : false,
+  "enforceSecurity" : true,
   "loginConfig" : {
-    "type" : "SSO",
+    "type" : "PAGE",
     "pageName" : "Login",
     "sessionTimeout" : {
-      "type" : "SSO",
+      "type" : "DIALOG",
       "pageName" : null,
       "timeoutValue" : 30
     }
@@ -35,7 +35,7 @@
     "parameter" : "WM_AUTH_TOKEN",
     "tokenValiditySeconds" : 1800
   },
-  "authProviders" : [ "CAS" ],
+  "authProviders" : [ "DATABASE" ],
   "xFrameOptions" : {
     "mode" : "SAMEORIGIN",
     "allowFromUrl" : null

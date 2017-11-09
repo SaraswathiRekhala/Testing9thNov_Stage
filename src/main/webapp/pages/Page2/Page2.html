@@ -64,6 +64,41 @@
                     <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button2" on-click="Variables.DeleteReps.deleteRecord()"></wm-button>
                 </wm-tabpane>
             </wm-tabs>
+            <wm-livetable name="ShortseqtServerdefLiveTable1">
+                <wm-table gridfirstrowselect="true" editmode="form" name="ShortseqtServerdefTable1" title="Shortseqt_serverdef List" dataset="bind:Variables.Db123__ShortseqtServerdefData.dataSet" navigation="Basic">
+                    <wm-table-column binding="shortid" caption="Shortid" generator="sequence" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
+                    <wm-table-column binding="username" caption="Username" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" readonly="true"></wm-table-column>
+                    <wm-table-column binding="id" caption="Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="short" readonly="true"></wm-table-column>
+                    <wm-table-column binding="curDate" caption="Cur Date" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date" readonly="true"></wm-table-column>
+                    <wm-table-column binding="curTime" caption="Cur Time" generator="assigned" pcdisplay="true" mobiledisplay="true" type="time" readonly="true"></wm-table-column>
+                    <wm-table-column binding="charCol" caption="Char Col" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="currentDateUpdate" caption="Current Date Update" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date" readonly="true"></wm-table-column>
+                    <wm-table-column binding="currentTimeUpdate" caption="Current Time Update" generator="assigned" pcdisplay="true" mobiledisplay="true" type="time" readonly="true"></wm-table-column>
+                    <wm-table-column binding="insertDate" caption="Insert Date" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date" readonly="true"></wm-table-column>
+                    <wm-table-column binding="insertTime" caption="Insert Time" generator="assigned" pcdisplay="true" mobiledisplay="true" type="time" readonly="true"></wm-table-column>
+                    <wm-table-column binding="datetimeInsertUPdate" caption="Datetime Insert U Pdate" generator="assigned" pcdisplay="true" mobiledisplay="true" type="datetime" readonly="true"></wm-table-column>
+                    <wm-table-column binding="datetimeInsert" caption="Datetime Insert" generator="assigned" pcdisplay="true" mobiledisplay="true" type="datetime" readonly="true"></wm-table-column>
+                    <wm-table-column binding="datetimeUpdate" caption="Datetime Update" generator="assigned" pcdisplay="true" mobiledisplay="true" type="datetime" readonly="true"></wm-table-column>
+                    <wm-table-column binding="usernameInsertable" caption="Username Insertable" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" readonly="true"></wm-table-column>
+                    <wm-table-column binding="useridInsertable" caption="Userid Insertable" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" readonly="true"></wm-table-column>
+                    <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
+                </wm-table>
+                <wm-liveform errormessage="" title="Shortseqt_serverdef Info" formlayout="inline" iconclass="wi wi-edit" name="ShortseqtServerdefLiveForm1" dataset="bind:Variables.Db123__ShortseqtServerdefData.dataSet" captionalign="left" captionposition="top">
+                    <wm-layoutgrid columns="1" name="layoutgrid2">
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                <wm-form-field name="charCol" displayname="Char Col" required="false" show="true" generator="assigned" primary-key="false" key="charCol" type="string" is-related="false" maxchars="1" defaultvalue="R" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-field name="shortid" displayname="Shortid" required="true" show="false" generator="sequence" primary-key="true" key="shortid" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livetable>
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>
