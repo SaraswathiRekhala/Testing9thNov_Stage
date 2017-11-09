@@ -278,6 +278,106 @@
       } ]
     }
   },
+  "SV_FollowUpsData" : {
+    "name" : "SV_FollowUpsData",
+    "description" : "FollowUps Data",
+    "version" : "V2",
+    "queryString" : "select * from FOLLOW_UPS",
+    "countQueryString" : "select count(*) from (select * from FOLLOW_UPS) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvFollowUpsDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "QUOTE_ID",
+        "fieldName" : "quoteId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "ENTRY_DATE",
+        "fieldName" : "entryDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_LeadsData" : {
+    "name" : "SV_LeadsData",
+    "description" : "Leads Data",
+    "version" : "V2",
+    "queryString" : "select * from LEADS",
+    "countQueryString" : "select count(*) from (select * from LEADS) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvLeadsDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "CUSTOMER_ID",
+        "fieldName" : "customerId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "ENTRY_DATE",
+        "fieldName" : "entryDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      } ]
+    }
+  },
   "SV_ProductsData" : {
     "name" : "SV_ProductsData",
     "description" : "Products Data",
@@ -441,6 +541,83 @@
       } ]
     }
   },
+  "SV_SalesData" : {
+    "name" : "SV_SalesData",
+    "description" : "SalesData",
+    "version" : "V2",
+    "queryString" : "select * from SALES",
+    "countQueryString" : "select count(*) from (select * from SALES) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvSalesDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "ENTRY_DATE",
+        "fieldName" : "entryDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "QUOTE_ID",
+        "fieldName" : "quoteId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "PRODUCT_ID",
+        "fieldName" : "productId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "SALES",
+        "fieldName" : "sales",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "IS_RENEWAL",
+        "fieldName" : "isRenewal",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Boolean",
+          "list" : false
+        }
+      } ]
+    }
+  },
   "SV_StatesData" : {
     "name" : "SV_StatesData",
     "description" : "statesData",
@@ -550,6 +727,74 @@
       }, {
         "name" : "REP_ID",
         "fieldName" : "repId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "Sv_QuotesData" : {
+    "name" : "Sv_QuotesData",
+    "description" : "QuotesData",
+    "version" : "V2",
+    "queryString" : "select * from QUOTES",
+    "countQueryString" : "select count(*) from (select * from QUOTES) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvQuotesDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "LEAD_ID",
+        "fieldName" : "leadId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "ENTRY_DATE",
+        "fieldName" : "entryDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "REP_ID",
+        "fieldName" : "repId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "ESTIMATED_SALE",
+        "fieldName" : "estimatedSale",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",

@@ -19,21 +19,9 @@ import com.testing9thnov_stage.salesdb.models.query.*;
 
 public interface SalesdbQueryExecutorService {
 
-    Page<SvTasksDataResponse> executeSV_TasksData(Pageable pageable);
-
-    Downloadable exportSV_TasksData(ExportType exportType, Pageable pageable);
-
     Page<SvRepsOrderByResponse> executeSV_RepsOrderBy(Pageable pageable);
 
     Downloadable exportSV_RepsOrderBy(ExportType exportType, Pageable pageable);
-
-    Page<HqlCustomreps1Response> executeHQL_CUSTOMREPS1(Pageable pageable);
-
-    Downloadable exportHQL_CUSTOMREPS1(ExportType exportType, Pageable pageable);
-
-    Page<SvCustomrepsResponse> executeSV_CUSTOMREPS(Pageable pageable);
-
-    Downloadable exportSV_CUSTOMREPS(ExportType exportType, Pageable pageable);
 
     Page<SvStatesDataResponse> executeSV_StatesData(Pageable pageable);
 
@@ -45,6 +33,10 @@ public interface SalesdbQueryExecutorService {
 
     Integer executeSV_CreateTable(SvCreateTableRequest svCreateTableRequest);
 
+    Page<SvSalesDataResponse> executeSV_SalesData(Pageable pageable);
+
+    Downloadable exportSV_SalesData(ExportType exportType, Pageable pageable);
+
     Page<SvProductsDataResponse> executeSV_ProductsData(Pageable pageable);
 
     Downloadable exportSV_ProductsData(ExportType exportType, Pageable pageable);
@@ -53,9 +45,33 @@ public interface SalesdbQueryExecutorService {
 
     Downloadable exportSV_ChannelsData(ExportType exportType, Pageable pageable);
 
+    Page<SvFollowUpsDataResponse> executeSV_FollowUpsData(Pageable pageable);
+
+    Downloadable exportSV_FollowUpsData(ExportType exportType, Pageable pageable);
+
+    Page<SvLeadsDataResponse> executeSV_LeadsData(Pageable pageable);
+
+    Downloadable exportSV_LeadsData(ExportType exportType, Pageable pageable);
+
     Page<SvCustomersDataResponse> executeSV_CustomersData(Pageable pageable);
 
     Downloadable exportSV_CustomersData(ExportType exportType, Pageable pageable);
+
+    Page<SvTasksDataResponse> executeSV_TasksData(Pageable pageable);
+
+    Downloadable exportSV_TasksData(ExportType exportType, Pageable pageable);
+
+    Page<HqlCustomreps1Response> executeHQL_CUSTOMREPS1(Pageable pageable);
+
+    Downloadable exportHQL_CUSTOMREPS1(ExportType exportType, Pageable pageable);
+
+    Page<SvCustomrepsResponse> executeSV_CUSTOMREPS(Pageable pageable);
+
+    Downloadable exportSV_CUSTOMREPS(ExportType exportType, Pageable pageable);
+
+    Page<SvQuotesDataResponse> executeSv_QuotesData(Pageable pageable);
+
+    Downloadable exportSv_QuotesData(ExportType exportType, Pageable pageable);
 
 }
 

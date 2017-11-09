@@ -2,18 +2,6 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <sql-query name="SV_TasksData">
-        <![CDATA[
-        select * from TASKS
-        ]]>
-    </sql-query>
-
-    <sql-query name="SV_TasksData__count">
-        <![CDATA[
-        select count(*) from (select * from TASKS) wmTempTable
-        ]]>
-    </sql-query>
-
     <sql-query name="SV_RepsOrderBy">
         <![CDATA[
         select * from REPS order by ID desc
@@ -23,30 +11,6 @@
     <sql-query name="SV_RepsOrderBy__count">
         <![CDATA[
         select count(*) from (select * from REPS order by ID desc) wmTempTable
-        ]]>
-    </sql-query>
-
-    <query name="HQL_CUSTOMREPS1">
-        <![CDATA[
-        select id as REPS_ID,name AS REPS_NAME,channelType AS REPS_CHANNEL_TYPE,picurl AS REPS_PIC_URL,username  AS REPS_USERNAME from Reps
-        ]]>
-    </query>
-
-    <query name="HQL_CUSTOMREPS1__count">
-        <![CDATA[
-        select count(*)  from Reps
-        ]]>
-    </query>
-
-    <sql-query name="SV_CUSTOMREPS">
-        <![CDATA[
-        select ID as REPS_ID,NAME AS REPS_NAME,CHANNEL_TYPE AS REPS_CHANNELTYPE,PICURL AS REPS_PICURL,USERNAME  AS REPS_USERNAME from REPS
-        ]]>
-    </sql-query>
-
-    <sql-query name="SV_CUSTOMREPS__count">
-        <![CDATA[
-        select count(*) from (select ID as REPS_ID,NAME AS REPS_NAME,CHANNEL_TYPE AS REPS_CHANNELTYPE,PICURL AS REPS_PICURL,USERNAME  AS REPS_USERNAME from REPS) wmTempTable
         ]]>
     </sql-query>
 
@@ -88,6 +52,18 @@
         ]]>
     </sql-query>
 
+    <sql-query name="SV_SalesData">
+        <![CDATA[
+        select * from SALES
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_SalesData__count">
+        <![CDATA[
+        select count(*) from (select * from SALES) wmTempTable
+        ]]>
+    </sql-query>
+
     <sql-query name="SV_ProductsData">
         <![CDATA[
         select * from PRODUCTS
@@ -112,6 +88,30 @@
         ]]>
     </sql-query>
 
+    <sql-query name="SV_FollowUpsData">
+        <![CDATA[
+        select * from FOLLOW_UPS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_FollowUpsData__count">
+        <![CDATA[
+        select count(*) from (select * from FOLLOW_UPS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_LeadsData">
+        <![CDATA[
+        select * from LEADS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_LeadsData__count">
+        <![CDATA[
+        select count(*) from (select * from LEADS) wmTempTable
+        ]]>
+    </sql-query>
+
     <sql-query name="SV_CustomersData">
         <![CDATA[
         select * from CUSTOMERS
@@ -121,6 +121,54 @@
     <sql-query name="SV_CustomersData__count">
         <![CDATA[
         select count(*) from (select * from CUSTOMERS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_TasksData">
+        <![CDATA[
+        select * from TASKS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_TasksData__count">
+        <![CDATA[
+        select count(*) from (select * from TASKS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <query name="HQL_CUSTOMREPS1">
+        <![CDATA[
+        select id as REPS_ID,name AS REPS_NAME,channelType AS REPS_CHANNEL_TYPE,picurl AS REPS_PIC_URL,username  AS REPS_USERNAME from Reps
+        ]]>
+    </query>
+
+    <query name="HQL_CUSTOMREPS1__count">
+        <![CDATA[
+        select count(*)  from Reps
+        ]]>
+    </query>
+
+    <sql-query name="SV_CUSTOMREPS">
+        <![CDATA[
+        select ID as REPS_ID,NAME AS REPS_NAME,CHANNEL_TYPE AS REPS_CHANNELTYPE,PICURL AS REPS_PICURL,USERNAME  AS REPS_USERNAME from REPS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_CUSTOMREPS__count">
+        <![CDATA[
+        select count(*) from (select ID as REPS_ID,NAME AS REPS_NAME,CHANNEL_TYPE AS REPS_CHANNELTYPE,PICURL AS REPS_PICURL,USERNAME  AS REPS_USERNAME from REPS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="Sv_QuotesData">
+        <![CDATA[
+        select * from QUOTES
+        ]]>
+    </sql-query>
+
+    <sql-query name="Sv_QuotesData__count">
+        <![CDATA[
+        select count(*) from (select * from QUOTES) wmTempTable
         ]]>
     </sql-query>
 </hibernate-mapping>
