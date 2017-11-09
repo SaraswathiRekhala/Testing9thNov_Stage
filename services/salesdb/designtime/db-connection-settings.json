@@ -12,6 +12,9 @@
   "port" : "",
   "schemaName" : "PUBLIC",
   "tableFilter" : [ {
+    "table" : "ALLTYPES",
+    "schema" : "PUBLIC"
+  }, {
     "table" : "CHANNELS",
     "schema" : "PUBLIC"
   }, {

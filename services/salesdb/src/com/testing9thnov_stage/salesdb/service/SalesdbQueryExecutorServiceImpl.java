@@ -37,6 +37,24 @@ public class SalesdbQueryExecutorServiceImpl implements SalesdbQueryExecutorServ
 
     @Transactional(readOnly = true, value = "salesdbTransactionManager")
     @Override
+    public Page<SvTasksDataResponse> executeSV_TasksData(Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.executeNamedQuery("SV_TasksData", params, SvTasksDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
+    public Downloadable exportSV_TasksData(ExportType exportType, Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.exportNamedQueryData("SV_TasksData", params, exportType, SvTasksDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
     public Page<SvRepsOrderByResponse> executeSV_RepsOrderBy(Pageable pageable) {
         Map params = new HashMap(0);
 
@@ -91,6 +109,24 @@ public class SalesdbQueryExecutorServiceImpl implements SalesdbQueryExecutorServ
 
     @Transactional(readOnly = true, value = "salesdbTransactionManager")
     @Override
+    public Page<SvStatesDataResponse> executeSV_StatesData(Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.executeNamedQuery("SV_StatesData", params, SvStatesDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
+    public Downloadable exportSV_StatesData(ExportType exportType, Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.exportNamedQueryData("SV_StatesData", params, exportType, SvStatesDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
     public Page<Reps> executeHQL_INOperator(List<Integer> channelType, Pageable pageable) {
         Map params = new HashMap(1);
 
@@ -107,6 +143,69 @@ public class SalesdbQueryExecutorServiceImpl implements SalesdbQueryExecutorServ
         params.put("channelType", channelType);
 
         return queryExecutor.exportNamedQueryData("HQL_INOperator", params, exportType, Reps.class, pageable);
+    }
+
+    @Transactional(value = "salesdbTransactionManager")
+    @Override
+    public Integer executeSV_CreateTable(SvCreateTableRequest svCreateTableRequest) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.executeNamedQueryForUpdate("SV_CreateTable", params);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
+    public Page<SvProductsDataResponse> executeSV_ProductsData(Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.executeNamedQuery("SV_ProductsData", params, SvProductsDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
+    public Downloadable exportSV_ProductsData(ExportType exportType, Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.exportNamedQueryData("SV_ProductsData", params, exportType, SvProductsDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
+    public Page<SvChannelsDataResponse> executeSV_ChannelsData(Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.executeNamedQuery("SV_ChannelsData", params, SvChannelsDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
+    public Downloadable exportSV_ChannelsData(ExportType exportType, Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.exportNamedQueryData("SV_ChannelsData", params, exportType, SvChannelsDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
+    public Page<SvCustomersDataResponse> executeSV_CustomersData(Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.executeNamedQuery("SV_CustomersData", params, SvCustomersDataResponse.class, pageable);
+    }
+
+    @Transactional(readOnly = true, value = "salesdbTransactionManager")
+    @Override
+    public Downloadable exportSV_CustomersData(ExportType exportType, Pageable pageable) {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.exportNamedQueryData("SV_CustomersData", params, exportType, SvCustomersDataResponse.class, pageable);
     }
 
 }

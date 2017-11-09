@@ -165,6 +165,160 @@
       } ]
     }
   },
+  "SV_ChannelsData" : {
+    "name" : "SV_ChannelsData",
+    "description" : "SV_ChannelsData",
+    "version" : "V2",
+    "queryString" : "select * from CHANNELS",
+    "countQueryString" : "select count(*) from (select * from CHANNELS) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvChannelsDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "NAME",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_CreateTable" : {
+    "name" : "SV_CreateTable",
+    "description" : "Create All Types Table",
+    "version" : "V2",
+    "queryString" : "CREATE TABLE ALLTYPES (INTID INT NOT NULL IDENTITY,BYTECOL TINYINT,SHORTCOL SMALLINT,LONGCOL DECIMAL(18,0),DOUBLECOL DECIMAL(18,8),BIGINTCOL BIGINT,BIGDECCOL DECIMAL(35,15) ,FLOATCOL FLOAT,CHARCOL CHAR(1),STRINGCOL VARCHAR(255),TEXTCOL CLOB(2255) ,CLOBCOL CLOB(8001) ,DATECOL DATE,DATETIMECOL DATETIME ,TIMECOL TIME,TIMESTAMPCOL TIMESTAMP,BOOLEANCOL BOOLEAN,BLOBCOL BLOB)",
+    "countQueryString" : "select count(*) from (CREATE TABLE ALLTYPES (INTID INT NOT NULL IDENTITY,BYTECOL TINYINT,SHORTCOL SMALLINT,LONGCOL DECIMAL(18,0),DOUBLECOL DECIMAL(18,8),BIGINTCOL BIGINT,BIGDECCOL DECIMAL(35,15) ,FLOATCOL FLOAT,CHARCOL CHAR(1),STRINGCOL VARCHAR(255),TEXTCOL CLOB(2255) ,CLOBCOL CLOB(8001) ,DATECOL DATE,DATETIMECOL DATETIME ,TIMECOL TIME,TIMESTAMPCOL TIMESTAMP,BOOLEANCOL BOOLEAN,BLOBCOL BLOB)) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "UPDATE",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvCreateTableRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
+  "SV_CustomersData" : {
+    "name" : "SV_CustomersData",
+    "description" : "SV_CustomersData",
+    "version" : "V2",
+    "queryString" : "select * from CUSTOMERS",
+    "countQueryString" : "select count(*) from (select * from CUSTOMERS) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvCustomersDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "NAME",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "STATE_ID",
+        "fieldName" : "stateId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_ProductsData" : {
+    "name" : "SV_ProductsData",
+    "description" : "Products Data",
+    "version" : "V2",
+    "queryString" : "select * from PRODUCTS",
+    "countQueryString" : "select count(*) from (select * from PRODUCTS) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvProductsDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "NAME",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
   "SV_RepsOrderBy" : {
     "name" : "SV_RepsOrderBy",
     "description" : "RepsOrderBy",
@@ -282,6 +436,124 @@
         "fieldType" : {
           "type" : "PRIMITIVE",
           "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_StatesData" : {
+    "name" : "SV_StatesData",
+    "description" : "statesData",
+    "version" : "V2",
+    "queryString" : "select * from STATES",
+    "countQueryString" : "select count(*) from (select * from STATES) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvStatesDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "NAME",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ABBREV",
+        "fieldName" : "abbrev",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_TasksData" : {
+    "name" : "SV_TasksData",
+    "description" : "Tasks Data",
+    "version" : "V2",
+    "queryString" : "select * from TASKS",
+    "countQueryString" : "select count(*) from (select * from TASKS) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvTasksDataResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "DESCRIPTION",
+        "fieldName" : "description",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "DUEDATE",
+        "fieldName" : "duedate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "DONE",
+        "fieldName" : "done",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Boolean",
+          "list" : false
+        }
+      }, {
+        "name" : "REP_ID",
+        "fieldName" : "repId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
           "list" : false
         }
       } ]

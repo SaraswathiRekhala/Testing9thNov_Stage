@@ -81,12 +81,39 @@
                             <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
                             <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action>
                             <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action>
+                            <wm-form-action key="reset" class="form-reset btn-secondary" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true" shortcutkey=""></wm-form-action>
+                            <wm-form-action key="delete" class="form-delete btn-secondary" iconclass="wi wi-trash" action="delete()" display-name="Delete" show="true" type="button" update-mode="false" shortcutkey=""></wm-form-action>
+                            <wm-form-action key="edit" class="form-update btn-secondary" iconclass="wi wi-pencil" action="edit()" display-name="Edit" show="true" type="button" update-mode="false" shortcutkey=""></wm-form-action>
+                            <wm-form-action key="new" class="form-new btn-success" iconclass="wi wi-plus" action="new()" display-name="New" show="true" type="button" update-mode="false" shortcutkey=""></wm-form-action>
                         </wm-liveform>
                     </wm-livetable>
                 </wm-accordionpane>
-                <wm-accordionpane name="accordionpane3"></wm-accordionpane>
+                <wm-accordionpane name="accordionpane3">
+                    <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button4" on-click="Widgets.insertqueryapiinvokeDialog.open()"></wm-button>
+                </wm-accordionpane>
             </wm-accordion>
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-view class="dialog-view" name="view1">
+        <wm-dialog dialogtype="design-dialog" name="insertqueryapiinvokeDialog" title="InsertQueryAPIInvoke Info" iconclass="wi wi-edit" modal="true">
+            <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.InsertQueryAPIInvoke.dataSet" captionalign="left" name="InsertQueryAPIForm1" on-success="Widgets.insertqueryapiinvokeDialog.close()">
+                <wm-layoutgrid columns="2" name="layoutgrid3">
+                    <wm-gridrow name="gridrow4">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn7">
+                            <wm-form-field readonly="false" name="BLOBCOL" displayname="Blobcol" key="BLOBCOL" type="file" show="true" widget="upload" multiple="true"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                            <wm-form-field readonly="false" name="wm_data_json" displayname="Wm Data Json" key="wm_data_json" type="string" show="true" widget="text"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-buttongroup horizontalalign="right" class="form-action col-md-12" name="buttongroup1">
+                    <wm-button caption="Reset" type="reset" class="btn-secondary" name="button1"></wm-button>
+                    <wm-button caption="Cancel" type="button" class="btn-warning" name="button2"></wm-button>
+                    <wm-button caption="Save" type="submit" class="btn-primary" name="button3"></wm-button>
+                </wm-buttongroup>
+            </wm-form>
+        </wm-dialog>
+    </wm-view>
 </wm-page>

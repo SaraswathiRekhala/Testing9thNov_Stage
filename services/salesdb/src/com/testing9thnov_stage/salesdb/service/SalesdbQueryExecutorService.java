@@ -19,6 +19,10 @@ import com.testing9thnov_stage.salesdb.models.query.*;
 
 public interface SalesdbQueryExecutorService {
 
+    Page<SvTasksDataResponse> executeSV_TasksData(Pageable pageable);
+
+    Downloadable exportSV_TasksData(ExportType exportType, Pageable pageable);
+
     Page<SvRepsOrderByResponse> executeSV_RepsOrderBy(Pageable pageable);
 
     Downloadable exportSV_RepsOrderBy(ExportType exportType, Pageable pageable);
@@ -31,9 +35,27 @@ public interface SalesdbQueryExecutorService {
 
     Downloadable exportSV_CUSTOMREPS(ExportType exportType, Pageable pageable);
 
+    Page<SvStatesDataResponse> executeSV_StatesData(Pageable pageable);
+
+    Downloadable exportSV_StatesData(ExportType exportType, Pageable pageable);
+
     Page<Reps> executeHQL_INOperator(List<Integer> channelType, Pageable pageable);
 
     Downloadable exportHQL_INOperator(ExportType exportType, List<Integer> channelType, Pageable pageable);
+
+    Integer executeSV_CreateTable(SvCreateTableRequest svCreateTableRequest);
+
+    Page<SvProductsDataResponse> executeSV_ProductsData(Pageable pageable);
+
+    Downloadable exportSV_ProductsData(ExportType exportType, Pageable pageable);
+
+    Page<SvChannelsDataResponse> executeSV_ChannelsData(Pageable pageable);
+
+    Downloadable exportSV_ChannelsData(ExportType exportType, Pageable pageable);
+
+    Page<SvCustomersDataResponse> executeSV_CustomersData(Pageable pageable);
+
+    Downloadable exportSV_CustomersData(ExportType exportType, Pageable pageable);
 
 }
 

@@ -1,0 +1,39 @@
+{
+  "endpointAddress" : "https://stage-studio.wavemakeronline.com/run-ynfwjldwj7/Testing31stOct_Stage/services/SqlServerDb123_/queryExecutor/queries/SV_InsertQueryWithAppEnv",
+  "method" : "POST",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "multipart/form-data",
+  "multiParamInfoList" : [ {
+    "type" : "FILE",
+    "name" : "BLOBCOL",
+    "list" : true,
+    "testValue" : null,
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "wm_data_json",
+    "list" : false,
+    "testValue" : "{\n\"TEXTCOL\": \"TSHCTR\",\n\"DATETIMECOL\": \"2016-11-16T01:01:01.000\",\n\"TIMECOL\": \"13:00:09\",\n\"INTCOL\": 547647,\n\"DOUBLECOL\": 57487,\n\"TIMESTAMPCOL\": \"2016-11-28T01:01:01.000\",\n\"BOOLEANCOL\": false,\n\"LONGCOL\": 674946,\n\"FLOATCOL\": 658.768,\n\"CLOBCOL\": \"UBJYDT\",\t\t\n\"CHARCOL\": \"G\",\n\"DATECOL\": \"2016-11-28\",\n\"BIGDECCOL\": 6965.9659,\n\"SHORTCOL\": 7876,\n\"BIGINTCOL\": 65963\n}",
+    "contentType" : "application/json"
+  } ],
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "X-Frame-Options" : [ "SAMEORIGIN" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Vary" : [ "Accept-Encoding" ],
+      "Date" : [ "Thu, 09 Nov 2017 09:45:03 GMT" ],
+      "Connection" : [ "keep-alive" ]
+    },
+    "responseBody" : "{\"result\":1}",
+    "convertedResponse" : null
+  },
+  "proxy" : null
+}

@@ -30,3 +30,10 @@ Application.$controller("TasksLiveForm1Controller", ["$scope",
 		$scope.ctrlScope = $scope;
 	}
 ]);
+
+Application.$controller("insertqueryapiinvokeDialogController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);

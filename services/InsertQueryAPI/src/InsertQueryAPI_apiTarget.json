@@ -1,0 +1,74 @@
+{
+  "basePath" : "${rest.InsertQueryAPI.basepath}",
+  "paths" : {
+    "/Testing31stOct_Stage/services/SqlServerDb123_/queryExecutor/queries/SV_InsertQueryWithAppEnv" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "InsertQueryAPI_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "in" : "formData",
+          "name" : "BLOBCOL",
+          "type" : "array",
+          "items" : {
+            "type" : "file"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "org.springframework.web.multipart.MultipartFile",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : true,
+          "in" : "formData",
+          "name" : "wm_data_json",
+          "x-WM-CONTENT_TYPE" : "application/json",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "multipart/form-data" ]
+      },
+      "x-WM-BASE_PATH" : "/Testing31stOct_Stage/services/SqlServerDb123_/queryExecutor/queries/SV_InsertQueryWithAppEnv",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.InsertQueryAPI.scheme}://${rest.InsertQueryAPI.host}${rest.InsertQueryAPI.basepath}/Testing31stOct_Stage/services/SqlServerDb123_/queryExecutor/queries/SV_InsertQueryWithAppEnv"
+    }
+  },
+  "host" : "${rest.InsertQueryAPI.host}",
+  "schemes" : [ "${rest.InsertQueryAPI.scheme}" ],
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "InsertQueryAPI.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "result" ],
+      "properties" : {
+        "result" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "8bb4905f-794f-4a15-b4c6-817397fc67c0",
+    "x-WM-SERVICE_ID" : "wavemakeronline",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

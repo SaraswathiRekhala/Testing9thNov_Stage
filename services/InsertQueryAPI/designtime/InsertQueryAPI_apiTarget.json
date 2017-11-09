@@ -1,0 +1,74 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "8bb4905f-794f-4a15-b4c6-817397fc67c0",
+    "x-WM-SERVICE_ID" : "wavemakeronline",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "host" : "stage-studio.wavemakeronline.com",
+  "basePath" : "/run-ynfwjldwj7",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/Testing31stOct_Stage/services/SqlServerDb123_/queryExecutor/queries/SV_InsertQueryWithAppEnv" : {
+      "post" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "InsertQueryAPI_RestServiceVirtualController-invoke",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "BLOBCOL",
+          "in" : "formData",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "file"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-FULLY_QUALIFIED_TYPE" : "org.springframework.web.multipart.MultipartFile"
+        }, {
+          "name" : "wm_data_json",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : true,
+          "x-WM-CONTENT_TYPE" : "application/json",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/Testing31stOct_Stage/services/SqlServerDb123_/queryExecutor/queries/SV_InsertQueryWithAppEnv",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.InsertQueryAPI.scheme}://${rest.InsertQueryAPI.host}${rest.InsertQueryAPI.basepath}/Testing31stOct_Stage/services/SqlServerDb123_/queryExecutor/queries/SV_InsertQueryWithAppEnv"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "result" ],
+      "properties" : {
+        "result" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "InsertQueryAPI.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

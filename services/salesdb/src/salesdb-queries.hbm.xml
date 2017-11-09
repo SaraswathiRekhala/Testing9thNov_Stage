@@ -2,6 +2,18 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="SV_TasksData">
+        <![CDATA[
+        select * from TASKS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_TasksData__count">
+        <![CDATA[
+        select count(*) from (select * from TASKS) wmTempTable
+        ]]>
+    </sql-query>
+
     <sql-query name="SV_RepsOrderBy">
         <![CDATA[
         select * from REPS order by ID desc
@@ -38,6 +50,18 @@
         ]]>
     </sql-query>
 
+    <sql-query name="SV_StatesData">
+        <![CDATA[
+        select * from STATES
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_StatesData__count">
+        <![CDATA[
+        select count(*) from (select * from STATES) wmTempTable
+        ]]>
+    </sql-query>
+
     <query name="HQL_INOperator">
         <![CDATA[
         from Reps where channelType IN (:channelType)
@@ -51,4 +75,52 @@
         ]]>
     <query-param name="channelType" type="java.lang.Integer"/>
     </query>
+
+    <sql-query name="SV_CreateTable">
+        <![CDATA[
+        CREATE TABLE ALLTYPES (INTID INT NOT NULL IDENTITY,BYTECOL TINYINT,SHORTCOL SMALLINT,LONGCOL DECIMAL(18,0),DOUBLECOL DECIMAL(18,8),BIGINTCOL BIGINT,BIGDECCOL DECIMAL(35,15) ,FLOATCOL FLOAT,CHARCOL CHAR(1),STRINGCOL VARCHAR(255),TEXTCOL CLOB(2255) ,CLOBCOL CLOB(8001) ,DATECOL DATE,DATETIMECOL DATETIME ,TIMECOL TIME,TIMESTAMPCOL TIMESTAMP,BOOLEANCOL BOOLEAN,BLOBCOL BLOB)
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_CreateTable__count">
+        <![CDATA[
+        select count(*) from (CREATE TABLE ALLTYPES (INTID INT NOT NULL IDENTITY,BYTECOL TINYINT,SHORTCOL SMALLINT,LONGCOL DECIMAL(18,0),DOUBLECOL DECIMAL(18,8),BIGINTCOL BIGINT,BIGDECCOL DECIMAL(35,15) ,FLOATCOL FLOAT,CHARCOL CHAR(1),STRINGCOL VARCHAR(255),TEXTCOL CLOB(2255) ,CLOBCOL CLOB(8001) ,DATECOL DATE,DATETIMECOL DATETIME ,TIMECOL TIME,TIMESTAMPCOL TIMESTAMP,BOOLEANCOL BOOLEAN,BLOBCOL BLOB)) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_ProductsData">
+        <![CDATA[
+        select * from PRODUCTS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_ProductsData__count">
+        <![CDATA[
+        select count(*) from (select * from PRODUCTS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_ChannelsData">
+        <![CDATA[
+        select * from CHANNELS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_ChannelsData__count">
+        <![CDATA[
+        select count(*) from (select * from CHANNELS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_CustomersData">
+        <![CDATA[
+        select * from CUSTOMERS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_CustomersData__count">
+        <![CDATA[
+        select count(*) from (select * from CUSTOMERS) wmTempTable
+        ]]>
+    </sql-query>
 </hibernate-mapping>

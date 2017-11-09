@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,11 +22,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wavemaker.commons.wrapper.IntegerWrapper;
 import com.wavemaker.runtime.data.dao.query.WMQueryExecutor;
 import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.file.model.Downloadable;
@@ -47,6 +50,25 @@ public class QueryExecutionController {
 
     @Autowired
     private SalesdbQueryExecutorService queryService;
+
+    @RequestMapping(value = "/queries/SV_TasksData", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Tasks Data")
+    public Page<SvTasksDataResponse> executeSV_TasksData(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_TasksData");
+        Page<SvTasksDataResponse> _result = queryService.executeSV_TasksData(pageable);
+        LOGGER.debug("got the result for named query: SV_TasksData, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file for query SV_TasksData")
+    @RequestMapping(value = "/queries/SV_TasksData/export/{exportType}", method = RequestMethod.GET, produces = "application/octet-stream")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Downloadable exportSV_TasksData(@PathVariable("exportType") ExportType exportType, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Exporting named query: SV_TasksData");
+
+        return queryService.exportSV_TasksData(exportType, pageable);
+    }
 
     @RequestMapping(value = "/queries/SV_RepsOrderBy", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
@@ -105,6 +127,25 @@ public class QueryExecutionController {
         return queryService.exportSV_CUSTOMREPS(exportType, pageable);
     }
 
+    @RequestMapping(value = "/queries/SV_StatesData", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "statesData")
+    public Page<SvStatesDataResponse> executeSV_StatesData(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_StatesData");
+        Page<SvStatesDataResponse> _result = queryService.executeSV_StatesData(pageable);
+        LOGGER.debug("got the result for named query: SV_StatesData, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file for query SV_StatesData")
+    @RequestMapping(value = "/queries/SV_StatesData/export/{exportType}", method = RequestMethod.GET, produces = "application/octet-stream")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Downloadable exportSV_StatesData(@PathVariable("exportType") ExportType exportType, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Exporting named query: SV_StatesData");
+
+        return queryService.exportSV_StatesData(exportType, pageable);
+    }
+
     @RequestMapping(value = "/queries/HQL_INOperator", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "In Operator")
@@ -122,6 +163,73 @@ public class QueryExecutionController {
         LOGGER.debug("Exporting named query: HQL_INOperator");
 
         return queryService.exportHQL_INOperator(exportType, channelType, pageable);
+    }
+
+    @RequestMapping(value = "/queries/SV_CreateTable", method = RequestMethod.PUT)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Create All Types Table")
+    public IntegerWrapper executeSV_CreateTable(@Valid @RequestBody SvCreateTableRequest svCreateTableRequest, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_CreateTable");
+        Integer _result = queryService.executeSV_CreateTable(svCreateTableRequest);
+        LOGGER.debug("got the result for named query: SV_CreateTable, result:{}", _result);
+        return new IntegerWrapper(_result);
+    }
+
+    @RequestMapping(value = "/queries/SV_ProductsData", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Products Data")
+    public Page<SvProductsDataResponse> executeSV_ProductsData(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_ProductsData");
+        Page<SvProductsDataResponse> _result = queryService.executeSV_ProductsData(pageable);
+        LOGGER.debug("got the result for named query: SV_ProductsData, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file for query SV_ProductsData")
+    @RequestMapping(value = "/queries/SV_ProductsData/export/{exportType}", method = RequestMethod.GET, produces = "application/octet-stream")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Downloadable exportSV_ProductsData(@PathVariable("exportType") ExportType exportType, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Exporting named query: SV_ProductsData");
+
+        return queryService.exportSV_ProductsData(exportType, pageable);
+    }
+
+    @RequestMapping(value = "/queries/SV_ChannelsData", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "SV_ChannelsData")
+    public Page<SvChannelsDataResponse> executeSV_ChannelsData(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_ChannelsData");
+        Page<SvChannelsDataResponse> _result = queryService.executeSV_ChannelsData(pageable);
+        LOGGER.debug("got the result for named query: SV_ChannelsData, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file for query SV_ChannelsData")
+    @RequestMapping(value = "/queries/SV_ChannelsData/export/{exportType}", method = RequestMethod.GET, produces = "application/octet-stream")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Downloadable exportSV_ChannelsData(@PathVariable("exportType") ExportType exportType, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Exporting named query: SV_ChannelsData");
+
+        return queryService.exportSV_ChannelsData(exportType, pageable);
+    }
+
+    @RequestMapping(value = "/queries/SV_CustomersData", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "SV_CustomersData")
+    public Page<SvCustomersDataResponse> executeSV_CustomersData(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_CustomersData");
+        Page<SvCustomersDataResponse> _result = queryService.executeSV_CustomersData(pageable);
+        LOGGER.debug("got the result for named query: SV_CustomersData, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file for query SV_CustomersData")
+    @RequestMapping(value = "/queries/SV_CustomersData/export/{exportType}", method = RequestMethod.GET, produces = "application/octet-stream")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Downloadable exportSV_CustomersData(@PathVariable("exportType") ExportType exportType, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Exporting named query: SV_CustomersData");
+
+        return queryService.exportSV_CustomersData(exportType, pageable);
     }
 
 }
