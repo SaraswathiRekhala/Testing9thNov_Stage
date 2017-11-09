@@ -34,7 +34,7 @@ public class DatetimeType implements Serializable {
     private String column3;
 
     @Id
-    @SequenceGenerator(name = "generator", sequenceName = "\"TABLE25_ID_seq\"" , schema = "public", allocationSize = 1)
+    @SequenceGenerator(name = "generator", sequenceName = "`TABLE25_ID_seq`" , schema = "public", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generator")
     @Column(name = "`ID`", nullable = false, scale = 0, precision = 10)
     public Integer getId() {

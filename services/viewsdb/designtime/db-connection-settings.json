@@ -11,7 +11,190 @@
   "dbName" : "viewsdb",
   "port" : "5432",
   "schemaName" : "public",
-  "tableFilter" : [ ],
+  "tableFilter" : [ {
+    "table" : "TABLE59",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE35",
+    "schema" : "public"
+  }, {
+    "table" : "Number_view",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE4",
+    "schema" : "public"
+  }, {
+    "table" : "Datetime Type",
+    "schema" : "public"
+  }, {
+    "table" : "DateTimeTypes",
+    "schema" : "public"
+  }, {
+    "table" : "number_table",
+    "schema" : "public"
+  }, {
+    "table" : "NOPK3",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE51",
+    "schema" : "public"
+  }, {
+    "table" : "Test",
+    "schema" : "public"
+  }, {
+    "table" : "testrelationdifftypes",
+    "schema" : "public"
+  }, {
+    "table" : "alltypes table",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE401",
+    "schema" : "public"
+  }, {
+    "table" : "CLOB_TABLE",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE212121",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE3",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE46",
+    "schema" : "public"
+  }, {
+    "table" : "users",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE113",
+    "schema" : "public"
+  }, {
+    "table" : "TestTable Name",
+    "schema" : "public"
+  }, {
+    "table" : "NOPK1",
+    "schema" : "public"
+  }, {
+    "table" : "alltypeswithdefaults",
+    "schema" : "public"
+  }, {
+    "table" : "testfunctionaldefaults",
+    "schema" : "public"
+  }, {
+    "table" : "BoolIssue",
+    "schema" : "public"
+  }, {
+    "table" : "nullrecordsview",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE129",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE64",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE278",
+    "schema" : "public"
+  }, {
+    "table" : "testnumbertypes",
+    "schema" : "public"
+  }, {
+    "table" : "Table2",
+    "schema" : "public"
+  }, {
+    "table" : "all types",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE63",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE45",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE62",
+    "schema" : "public"
+  }, {
+    "table" : "userdetails",
+    "schema" : "public"
+  }, {
+    "table" : "AutoIncrement_Table",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE17",
+    "schema" : "public"
+  }, {
+    "table" : "NumericView",
+    "schema" : "public"
+  }, {
+    "table" : "Booleantest_delete",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE60",
+    "schema" : "public"
+  }, {
+    "table" : "BooleanTestCase",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE26",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE44",
+    "schema" : "public"
+  }, {
+    "table" : "newTable",
+    "schema" : "public"
+  }, {
+    "table" : "Numberviews1",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE18",
+    "schema" : "public"
+  }, {
+    "table" : "TEST_NOPK",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE61",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE18511",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE37",
+    "schema" : "public"
+  }, {
+    "table" : "number223",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE749",
+    "schema" : "public"
+  }, {
+    "table" : "usersinteger",
+    "schema" : "public"
+  }, {
+    "table" : "NOPK2",
+    "schema" : "public"
+  }, {
+    "table" : "TEST_NOPK2",
+    "schema" : "public"
+  }, {
+    "table" : "sample_virtualtable",
+    "schema" : "public"
+  }, {
+    "table" : "TABLEUpdate",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE133",
+    "schema" : "public"
+  }, {
+    "table" : "TestUpdate",
+    "schema" : "public"
+  }, {
+    "table" : "sample_table",
+    "schema" : "public"
+  }, {
+    "table" : "Boolean_TestCases",
+    "schema" : "public"
+  } ],
   "schemaFilter" : [ "public" ],
   "impersonateUser" : false,
   "activeDirectoryDomain" : null,
