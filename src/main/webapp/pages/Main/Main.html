@@ -7,20 +7,21 @@
             <wm-tabs name="tabs1">
                 <wm-tabpane name="tabpane1">
                     <wm-livetable formlayout="dialog" name="EmployeeLiveTable1">
-                        <wm-table gridfirstrowselect="true" editmode="dialog" name="EmployeeTable1" title="Employee List" dataset="bind:Variables.HrdbEmployeeData.dataSet" navigation="Basic">
-                            <wm-table-column binding="empId" caption="Emp Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
-                            <wm-table-column binding="firstname" caption="Firstname" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                            <wm-table-column binding="lastname" caption="Lastname" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                            <wm-table-column binding="street" caption="Street" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                            <wm-table-column binding="city" caption="City" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                            <wm-table-column binding="state" caption="State" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                            <wm-table-column binding="zip" caption="Zip" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                            <wm-table-column binding="birthdate" caption="Birthdate" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
-                            <wm-table-column binding="picurl" caption="Picurl" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                            <wm-table-column binding="jobTitle" caption="Job Title" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                            <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
-                            <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
-                            <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
+                        <wm-table gridfirstrowselect="true" editmode="dialog" name="EmployeeTable1" title="Employee List" dataset="bind:Variables.HrdbEmployeeData.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
+                            <wm-table-column binding="empId" caption="Emp Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
+                            <wm-table-column binding="firstname" caption="Firstname" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="lastname" caption="Lastname" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="street" caption="Street" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="city" caption="City" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="state" caption="State" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="zip" caption="Zip" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="birthdate" caption="Birthdate" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="picurl" caption="Picurl" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="jobTitle" caption="Job Title" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="rowOperations" caption="Actions" width="120px" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                            <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action>
+                            <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action>
+                            <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action>
                         </wm-table>
                         <wm-liveform errormessage="" title="Employee Info" formlayout="dialog" iconclass="wi wi-edit" name="EmployeeLiveForm1" dataset="bind:Variables.HrdbEmployeeData.dataSet" captionalign="left" captionposition="top">
                             <wm-layoutgrid columns="3" name="layoutgrid1">
@@ -100,7 +101,7 @@
                     </wm-livetable>
                 </wm-tabpane>
                 <wm-tabpane name="tabpane2">
-                    <wm-table editmode="inline" name="RepsTable1" title="Reps List" dataset="bind:Variables.SalesdbRepsData.dataSet" navigation="Basic">
+                    <wm-table editmode="inline" name="RepsTable1" title="Reps List" dataset="bind:Variables.SalesdbRepsData.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
                         <wm-table-column binding="id" caption="Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
                         <wm-table-column binding="name" caption="Name" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
                         <wm-table-column binding="street" caption="Street" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
@@ -115,38 +116,45 @@
                         <wm-table-column binding="username" caption="Username" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
                         <wm-table-column binding="channels.id" caption="Channels Id" primary-key="true" edit-widget-type="select" related-entity-name="Channels" type="integer" generator="identity" show="true" readonly="false"></wm-table-column>
                         <wm-table-column binding="channels.name" caption="Channels Name" edit-widget-type="text" related-entity-name="Channels" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
-                        <wm-table-column binding="rowOperations" caption="Actions" width="120px" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                        <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
                         <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action>
                         <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action>
                         <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action>
                     </wm-table>
                 </wm-tabpane>
                 <wm-tabpane name="tabpane3">
-                    <wm-table name="executeHQL_CUSTOMREPSTable1" title="" dataset="bind:Variables.HQL_CUSTOMREPS.dataSet" navigation="Basic">
-                        <wm-table-column binding="picUrl" widget-type="image" caption="Pic Url" pcdisplay="true" mobiledisplay="true" type="string">
-                            <wm-picture picturesource="{{row.getProperty('picUrl')}}" hint="{{row.getProperty('picUrl')}}" class="" data-ng-class=""></wm-picture>
-                        </wm-table-column>
-                        <wm-table-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                        <wm-table-column binding="channelType" caption="Channel Type" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
-                        <wm-table-column binding="id" caption="Id" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
-                        <wm-table-column binding="username" caption="Username" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table name="executeHQL_CUSTOMREPS1Table1" title="" dataset="bind:Variables.HQL_CUSTOMREPS.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
+                        <wm-table-column binding="repsChannelType" caption="Reps Channel Type" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="repsName" caption="Reps Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="repsPicUrl" caption="Reps Pic Url" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="repsUsername" caption="Reps Username" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="repsId" caption="Reps Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
                     </wm-table>
                 </wm-tabpane>
                 <wm-tabpane name="tabpane4">
-                    <wm-table name="executeSV_RepsOrderByTable1" title="" dataset="bind:Variables.SalesdbExecuteSV_RepsOrderBy.dataSet" navigation="Basic">
-                        <wm-table-column binding="zip" caption="Zip" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                        <wm-table-column binding="picurl" widget-type="image" caption="Picurl" pcdisplay="true" mobiledisplay="true" type="string">
+                    <wm-table name="executeSV_RepsOrderByTable1" title="" dataset="bind:Variables.SalesdbExecuteSV_RepsOrderBy.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
+                        <wm-table-column binding="zip" caption="Zip" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="picurl" caption="Picurl" widget-type="image" edit-widget-type="text" type="string" show="true" readonly="false">
                             <wm-picture picturesource="{{row.getProperty('picurl')}}" hint="{{row.getProperty('picurl')}}" class="" data-ng-class=""></wm-picture>
                         </wm-table-column>
-                        <wm-table-column binding="password" caption="Password" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                        <wm-table-column binding="role" caption="Role" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                        <wm-table-column binding="city" caption="City" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                        <wm-table-column binding="street" caption="Street" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                        <wm-table-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                        <wm-table-column binding="channelType" caption="Channel Type" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
-                        <wm-table-column binding="id" caption="Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
-                        <wm-table-column binding="state" caption="State" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                        <wm-table-column binding="username" caption="Username" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                        <wm-table-column binding="password" caption="Password" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="role" caption="Role" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="city" caption="City" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="street" caption="Street" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="name" caption="Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="channelType" caption="Channel Type" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="id" caption="Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="state" caption="State" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="username" caption="Username" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane5">
+                    <wm-table name="executeSV_CUSTOMREPSTable1" title="" dataset="bind:Variables.SalesdbExecuteSV_CUSTOMREPS.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
+                        <wm-table-column binding="repsName" caption="Reps Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="repsChanneltype" caption="Reps Channeltype" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="repsPicurl" caption="Reps Picurl" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="repsUsername" caption="Reps Username" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="repsId" caption="Reps Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
                     </wm-table>
                 </wm-tabpane>
             </wm-tabs>

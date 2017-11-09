@@ -10,6 +10,7 @@ import java.sql.Date;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
@@ -35,6 +36,7 @@ public class Sales implements Serializable {
     private Boolean isRenewal;
     private Products products;
     private Quotes quotes;
+    private Tasks tasks;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -118,6 +120,20 @@ public class Sales implements Serializable {
         }
 
         this.quotes = quotes;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "`SALES`", referencedColumnName = "`ID`", insertable = false, updatable = false, foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    public Tasks getTasks() {
+        return this.tasks;
+    }
+
+    public void setTasks(Tasks tasks) {
+        if(tasks != null) {
+            this.sales = tasks.getId();
+        }
+
+        this.tasks = tasks;
     }
 
     @Override

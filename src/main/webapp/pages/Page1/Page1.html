@@ -1,0 +1,92 @@
+<wm-page data-ng-controller="Page1PageController" pagetitle="Page 1" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-accordion name="accordion1">
+                <wm-accordionpane name="accordionpane1">
+                    <wm-composite name="composite1">
+                        <wm-label class="col-md-3 control-label" name="label1" caption="Select Channels"></wm-label>
+                        <wm-container class="col-md-9" name="container1">
+                            <wm-checkboxset height="auto" name="checkboxset1" dataset="bind:Variables.ChannelsReadData.dataSet" datafield="id" displayfield="name"></wm-checkboxset>
+                        </wm-container>
+                    </wm-composite>
+                    <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="executeHQL_INOperatorList1" dataset="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet" navigation="Basic" groupby="channels.name">
+                        <wm-listtemplate layout="media" name="listtemplate1">
+                            <wm-card name="card1">
+                                <wm-card-content fontsize="0.8" fontunit="em" name="card_content1">
+                                    <wm-layoutgrid columns="2" name="layoutgrid1">
+                                        <wm-gridrow name="gridrow1">
+                                            <wm-gridcolumn colwidth="6" columnwidth="6" class="col-xs-6" name="gridcolumn1">
+                                                <wm-picture name="Picture" width="100%" picturesource="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet.picurl"></wm-picture>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn colwidth="6" columnwidth="6" padding="unset 1.25em" class="col-xs-6" name="gridcolumn2">
+                                                <wm-label name="ID" caption="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet.id" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                                <wm-label name="Name" caption="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet.name" class="h4" margin="0px unset" whitespace="nowrap"></wm-label>
+                                                <wm-label name="JobTitle" caption="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet.channelType" class="h5" margin="0px unset unset unset" whitespace="nowrap"></wm-label>
+                                                <wm-label name="Department" caption="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet.channels.id" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                                <wm-label name="Location" caption="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet.username" class="text-muted p" whitespace="nowrap"></wm-label>
+                                                <wm-anchor name="PhoneNumber" caption="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet.street" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor>
+                                                <wm-anchor name="EmailID" class="p text-muted" hyperlink="mailto://" caption="bind:Variables.SalesdbExecuteHQL_INOperator.dataSet.zip" whitespace="nowrap"></wm-anchor>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-card-content>
+                            </wm-card>
+                        </wm-listtemplate>
+                    </wm-list>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane2">
+                    <wm-livetable name="TasksLiveTable1">
+                        <wm-table gridfirstrowselect="true" editmode="form" name="TasksTable1" title="Tasks List" dataset="bind:Variables.SalesdbTasksData.dataSet" navigation="Basic">
+                            <wm-table-column binding="id" caption="Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
+                            <wm-table-column binding="description" caption="Description" generator="assigned" pcdisplay="true" mobiledisplay="true" type="text"></wm-table-column>
+                            <wm-table-column binding="duedate" caption="Duedate" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                            <wm-table-column binding="done" caption="Done" generator="assigned" pcdisplay="true" mobiledisplay="true" type="boolean"></wm-table-column>
+                            <wm-table-column binding="reps.id" caption="Reps Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" related-entity-name="Reps"></wm-table-column>
+                            <wm-table-column binding="reps.name" caption="Reps Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.street" caption="Reps Street" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.city" caption="Reps City" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.state" caption="Reps State" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.zip" caption="Reps Zip" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.picurl" caption="Reps Picurl" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.password" caption="Reps Password" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.role" caption="Reps Role" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.username" caption="Reps Username" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-column binding="reps.channelType" caption="Channel Type" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" related-entity-name="Reps" readonly="true"></wm-table-column>
+                            <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                            <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
+                            <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
+                        </wm-table>
+                        <wm-liveform errormessage="" title="Tasks Info" formlayout="inline" iconclass="wi wi-edit" name="TasksLiveForm1" dataset="bind:Variables.SalesdbTasksData.dataSet" captionalign="left" captionposition="top">
+                            <wm-layoutgrid columns="3" name="layoutgrid2">
+                                <wm-gridrow name="gridrow2">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                                        <wm-form-field name="description" displayname="Description" show="true" primary-key="false" generator="assigned" key="description" type="text" readonly="false" required="false" widget="text" maxchars="16777216" inputtype="text"
+                                            placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                                        <wm-form-field name="duedate" displayname="Duedate" show="true" primary-key="false" generator="assigned" key="duedate" type="date" readonly="false" required="false" widget="date" placeholder="Select date" outputformat="yyyy-MM-dd"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn5">
+                                        <wm-form-field name="done" displayname="Done" show="true" primary-key="false" generator="assigned" key="done" type="boolean" readonly="false" required="false" widget="checkbox" placeholder=""></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                                        <wm-form-field name="reps" displayname="Reps" show="true" primary-key="false" generator="assigned" key="reps" type="list" is-related="true" readonly="false" widget="autocomplete" displaylabel="channels.name" placeholder="Search"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action>
+                            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livetable>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane3"></wm-accordionpane>
+            </wm-accordion>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

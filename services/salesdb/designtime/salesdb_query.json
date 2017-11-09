@@ -1,9 +1,9 @@
 {
-  "HQL_CUSTOMREPS" : {
-    "name" : "HQL_CUSTOMREPS",
+  "HQL_CUSTOMREPS1" : {
+    "name" : "HQL_CUSTOMREPS1",
     "description" : "CUSTOM REPS",
     "version" : "V2",
-    "queryString" : "select id as ID,name AS NAME,channelType AS CHANNEL_TYPE,picurl AS PIC_URL,username  AS USERNAME from Reps",
+    "queryString" : "select id as REPS_ID,name AS REPS_NAME,channelType AS REPS_CHANNEL_TYPE,picurl AS REPS_PIC_URL,username  AS REPS_USERNAME from Reps",
     "countQueryString" : "select count(*)  from Reps",
     "nativeSql" : false,
     "fetchCount" : true,
@@ -16,12 +16,12 @@
     },
     "identifiers" : [ ],
     "response" : {
-      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.HqlCustomrepsResponse",
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.HqlCustomreps1Response",
       "returns" : "CUSTOM",
       "responseType" : "PAGINATED",
       "properties" : [ {
-        "name" : "ID",
-        "fieldName" : "id",
+        "name" : "REPS_ID",
+        "fieldName" : "repsId",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",
@@ -29,8 +29,8 @@
           "list" : false
         }
       }, {
-        "name" : "NAME",
-        "fieldName" : "name",
+        "name" : "REPS_NAME",
+        "fieldName" : "repsName",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",
@@ -38,8 +38,8 @@
           "list" : false
         }
       }, {
-        "name" : "CHANNEL_TYPE",
-        "fieldName" : "channelType",
+        "name" : "REPS_CHANNEL_TYPE",
+        "fieldName" : "repsChannelType",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",
@@ -47,8 +47,8 @@
           "list" : false
         }
       }, {
-        "name" : "PIC_URL",
-        "fieldName" : "picUrl",
+        "name" : "REPS_PIC_URL",
+        "fieldName" : "repsPicUrl",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",
@@ -56,8 +56,106 @@
           "list" : false
         }
       }, {
-        "name" : "USERNAME",
-        "fieldName" : "username",
+        "name" : "REPS_USERNAME",
+        "fieldName" : "repsUsername",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "HQL_INOperator" : {
+    "name" : "HQL_INOperator",
+    "description" : "In Operator",
+    "version" : "V2",
+    "queryString" : "from Reps where channelType IN (:channelType)",
+    "countQueryString" : "select count(*) from Reps where channelType IN (:channelType)",
+    "nativeSql" : false,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "channelType",
+      "type" : "integer",
+      "list" : true,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : [ "2", "5" ],
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.Reps",
+      "returns" : "ENTITY",
+      "responseType" : "PAGINATED"
+    }
+  },
+  "SV_CUSTOMREPS" : {
+    "name" : "SV_CUSTOMREPS",
+    "description" : "CUSTOM REPS",
+    "version" : "V2",
+    "queryString" : "select ID as REPS_ID,NAME AS REPS_NAME,CHANNEL_TYPE AS REPS_CHANNELTYPE,PICURL AS REPS_PICURL,USERNAME  AS REPS_USERNAME from REPS",
+    "countQueryString" : "select count(*) from (select ID as REPS_ID,NAME AS REPS_NAME,CHANNEL_TYPE AS REPS_CHANNELTYPE,PICURL AS REPS_PICURL,USERNAME  AS REPS_USERNAME from REPS) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testing9thnov_stage.salesdb.models.query.SvCustomrepsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "REPS_ID",
+        "fieldName" : "repsId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "REPS_NAME",
+        "fieldName" : "repsName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "REPS_CHANNELTYPE",
+        "fieldName" : "repsChanneltype",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "REPS_PICURL",
+        "fieldName" : "repsPicurl",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "REPS_USERNAME",
+        "fieldName" : "repsUsername",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",

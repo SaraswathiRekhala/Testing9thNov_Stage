@@ -2,18 +2,6 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <query name="HQL_CUSTOMREPS">
-        <![CDATA[
-        select id as ID,name AS NAME,channelType AS CHANNEL_TYPE,picurl AS PIC_URL,username  AS USERNAME from Reps
-        ]]>
-    </query>
-
-    <query name="HQL_CUSTOMREPS__count">
-        <![CDATA[
-        select count(*)  from Reps
-        ]]>
-    </query>
-
     <sql-query name="SV_RepsOrderBy">
         <![CDATA[
         select * from REPS order by ID desc
@@ -25,4 +13,42 @@
         select count(*) from (select * from REPS order by ID desc) wmTempTable
         ]]>
     </sql-query>
+
+    <query name="HQL_CUSTOMREPS1">
+        <![CDATA[
+        select id as REPS_ID,name AS REPS_NAME,channelType AS REPS_CHANNEL_TYPE,picurl AS REPS_PIC_URL,username  AS REPS_USERNAME from Reps
+        ]]>
+    </query>
+
+    <query name="HQL_CUSTOMREPS1__count">
+        <![CDATA[
+        select count(*)  from Reps
+        ]]>
+    </query>
+
+    <sql-query name="SV_CUSTOMREPS">
+        <![CDATA[
+        select ID as REPS_ID,NAME AS REPS_NAME,CHANNEL_TYPE AS REPS_CHANNELTYPE,PICURL AS REPS_PICURL,USERNAME  AS REPS_USERNAME from REPS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_CUSTOMREPS__count">
+        <![CDATA[
+        select count(*) from (select ID as REPS_ID,NAME AS REPS_NAME,CHANNEL_TYPE AS REPS_CHANNELTYPE,PICURL AS REPS_PICURL,USERNAME  AS REPS_USERNAME from REPS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <query name="HQL_INOperator">
+        <![CDATA[
+        from Reps where channelType IN (:channelType)
+        ]]>
+    <query-param name="channelType" type="java.lang.Integer"/>
+    </query>
+
+    <query name="HQL_INOperator__count">
+        <![CDATA[
+        select count(*) from Reps where channelType IN (:channelType)
+        ]]>
+    <query-param name="channelType" type="java.lang.Integer"/>
+    </query>
 </hibernate-mapping>

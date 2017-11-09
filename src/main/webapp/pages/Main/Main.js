@@ -37,14 +37,23 @@ Application.$controller("RepsTable1Controller", ["$scope",
 	}
 ]);
 
-Application.$controller("executeHQL_CUSTOMREPSTable1Controller", ["$scope",
+
+
+Application.$controller("executeSV_RepsOrderByTable1Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;
 	}
 ]);
 
-Application.$controller("executeSV_RepsOrderByTable1Controller", ["$scope",
+Application.$controller("executeSV_CUSTOMREPSTable1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("executeHQL_CUSTOMREPS1Table1Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;

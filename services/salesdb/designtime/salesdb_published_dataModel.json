@@ -472,7 +472,7 @@
       },
       "constraintList" : null,
       "fieldName" : "sales",
-      "foreignKey" : false,
+      "foreignKey" : true,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
@@ -480,8 +480,8 @@
       "name" : "SALES",
       "nullable" : true,
       "oldName" : "SALES",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
       "precision" : 10,
@@ -568,6 +568,23 @@
       "targetColumnsUniqueKey" : false,
       "targetTable" : "QUOTES",
       "virtual" : false
+    }, {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "tasks",
+      "mappings" : [ {
+        "sourceColumn" : "SALES",
+        "targetColumn" : "ID"
+      } ],
+      "name" : "FK_SALES_TO_TASKS_SALES_ID",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "SALES",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "TASKS",
+      "virtual" : true
     } ],
     "schema" : "PUBLIC",
     "type" : "TABLE"
