@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <query name="HQL_CUSTOMREPS">
+        <![CDATA[
+        select id as ID,name AS NAME,channelType AS CHANNEL_TYPE,picurl AS PIC_URL,username  AS USERNAME from Reps
+        ]]>
+    </query>
+
+    <query name="HQL_CUSTOMREPS__count">
+        <![CDATA[
+        select count(*)  from Reps
+        ]]>
+    </query>
+
+    <sql-query name="SV_RepsOrderBy">
+        <![CDATA[
+        select * from REPS order by ID desc
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_RepsOrderBy__count">
+        <![CDATA[
+        select count(*) from (select * from REPS order by ID desc) wmTempTable
+        ]]>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+{
+  "serverUrl" : "https://54.204.140.161:8801/cas_pramati",
+  "loginUrl" : "https://54.204.140.161:8801/cas_pramati/login",
+  "validationUrl" : "https://54.204.140.161:8801/cas_pramati",
+  "logoutUrl" : "https://54.204.140.161:8801/cas_pramati/logout",
+  "serviceParameter" : "service",
+  "artifactParameter" : "ticket",
+  "roleMappingEnabled" : true,
+  "roleMappingConfig" : {
+    "roleAttributeName" : "cn"
+  },
+  "attributes" : [ "uid", "cn" ]
+}
