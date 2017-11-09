@@ -1,0 +1,46 @@
+<wm-page data-ng-controller="Page2PageController" pagetitle="Page 2" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-tabs name="tabs1">
+                <wm-tabpane name="tabpane1" title="Channel">
+                    <wm-table name="executeSV_ChannelsDataTable1" title="" dataset="bind:Variables.SalesdbExecuteSV_ChannelsData.dataSet" navigation="Basic">
+                        <wm-table-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                        <wm-table-column binding="id" caption="Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane2">
+                    <wm-table name="executeSV_CustomersDataTable1" title="" dataset="bind:Variables.SalesdbExecuteSV_CustomersData.dataSet" navigation="Basic">
+                        <wm-table-column binding="stateId" caption="State Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                        <wm-table-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                        <wm-table-column binding="id" caption="Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane3">
+                    <wm-table name="executeSV_FollowUpsDataTable1" title="" dataset="bind:Variables.SalesdbExecuteSV_FollowUpsData.dataSet" navigation="Basic">
+                        <wm-table-column binding="entryDate" caption="Entry Date" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                        <wm-table-column binding="id" caption="Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                        <wm-table-column binding="quoteId" caption="Quote Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane4">
+                    <wm-table name="executeSV_LeadsDataTable1" title="" dataset="bind:Variables.SalesdbExecuteSV_LeadsData.dataSet" navigation="Basic">
+                        <wm-table-column binding="entryDate" caption="Entry Date" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                        <wm-table-column binding="customerId" caption="Customer Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                        <wm-table-column binding="id" caption="Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane5">
+                    <wm-table name="executeSV_ProductsDataTable1" title="" dataset="bind:Variables.SalesdbExecuteSV_ProductsData.dataSet" navigation="Basic">
+                        <wm-table-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                        <wm-table-column binding="id" caption="Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane6"></wm-tabpane>
+                <wm-tabpane name="tabpane7"></wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

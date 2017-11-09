@@ -34,6 +34,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_Page2" : {
+    "_id" : "wm-goToPage_Page2-wm.NavigationVariable-1510224600698",
+    "name" : "goToPage_Page2",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Page2",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "loggedInUser" : {
     "_id" : "wm-loggedInUser-wm.Variable-1510205218215",
     "name" : "loggedInUser",
